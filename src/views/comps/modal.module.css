@@ -1,0 +1,83 @@
+.modal {
+    min-width: 320px;
+    background: white;
+    border-radius: 3px;
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+.title {
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 8px 16px;
+    background-color: #f8f8f8;
+    border-bottom: 1px solid #eee;
+}
+
+.title h3 {
+    margin: 0px;
+}
+
+.title .close {
+    cursor: pointer;
+    border-radius: 2px;
+    width: 24px;
+    height: 24px;
+    padding: 4px;
+}
+
+.title .close svg {
+    width: 16px;
+    height: 16px;
+    fill: #747678;
+}
+
+.title .close:hover {
+    fill: black !important;
+    background: #eee !important;
+}
+
+.body {
+    background: white;
+    padding: 16px;
+    max-height: calc(100vh - 104px);
+
+    overflow: auto;
+}
+
+.footer {
+    padding: 8px 16px;
+    background-color: #f8f8f8;
+    border-top: 1px solid #eee;
+
+    display: flex;
+    align-items: center;
+}
+
+.footer .remove {
+    width: 32px;
+    height: 32px;
+    padding: 8px;
+    fill: gray;
+    cursor: pointer;
+    border-radius: 3px;
+}
+
+.footer .remove:hover {
+    background-color: #eee;
+}
+
+.footer .remove svg {
+    width: 100%;
+    height: 100%;
+}
+
+.footer .toright {
+    margin-left: auto;
+}
+
+.footer .toright > * {
+    margin-left: 16px;
+}

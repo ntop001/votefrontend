@@ -1,0 +1,53 @@
+.button {
+    transition: background .12s ease-in-out;
+    border: 0;
+    border-radius: 2px;
+    cursor: pointer;
+    height: 32px;
+    box-sizing: border-box;
+    user-select: none;
+    outline: 0;
+    
+    font: 600 15px/20px Source Sans Pro,sans-serif;
+    color: white;
+    fill: white;
+    padding: 4px 12px;
+
+    white-space: nowrap;
+    display: inline-flex;
+    align-items : center;
+    justify-content: center;
+}
+
+.button svg {
+    width: 20px;
+    height: 20px;
+}
+
+.button > :not(:last-child) {
+    margin-right: 8px;
+}
+
+.button-green {
+    background: #19b57f;
+    box-shadow: 0 1px 2px rgba(38,41,44,.08);
+}
+
+.button-green:hover {
+    opacity: 0.8;
+}
+
+.button-normal {
+    color: black;
+    fill: #333;
+    background-color: white;
+    border: 1px solid #cbcccd;;
+}
+
+.button-normal:hover {
+    background-color: #eee;
+}
+
+.button-normal:disabled {
+    background-color: #eee;
+}

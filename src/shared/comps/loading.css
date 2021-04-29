@@ -1,0 +1,22 @@
+.lds-dual-ring {
+    display: inline-block;
+    max-width: 32px;
+    max-height: 32px;
+    width: 100%;
+    height: 100%;
+    animation: lds-dual-ring 1.2s linear infinite;
+}
+
+.lds-dual-ring svg {
+    width: 100%;
+    height: 100%;
+}
+
+@keyframes lds-dual-ring {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+}

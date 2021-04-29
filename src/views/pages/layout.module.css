@@ -1,0 +1,39 @@
+.layout {
+    margin-top: 0px;
+    min-height: 100vh;
+    display: flex;
+    top: 48px;
+}
+
+.sider {
+    position: relative;
+    display: flex;
+    top: 0px;
+    height: 100vh;
+}
+
+.headbar {
+    position: relative;
+    z-index: 9999;
+}
+
+.main {
+    width: calc(100vw - 60px);
+    height: 100vh;
+}
+
+.main .content {
+    width: 100%;
+    height: calc(100vh - 56px);
+    overflow-y: scroll;
+}
+
+.loading {
+    width: 100%;
+    height: 100%;
+    padding-bottom: 16%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

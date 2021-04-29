@@ -1,0 +1,7 @@
+.footer {
+    box-sizing: border-box;
+    height: 140px;
+    padding-top: 100px;
+    font-size: 13px;
+    color: gray;
+}

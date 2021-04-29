@@ -1,0 +1,109 @@
+.header {
+    max-width: 80%;
+    margin: 0 auto;
+
+    box-sizing: border-box;
+    padding: 8px 24px;
+    height: 64px;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+}
+
+.header a {
+    color: #333;
+}
+
+.header a:hover {
+    color: #333;
+    opacity: 0.7;
+}
+
+.header .logo {
+    height: 80%;
+    color: white;
+    display: flex;
+    align-items: center;
+}
+
+.header .logo img {
+    height: 100%;
+}
+
+.header .left {
+    margin-left: 12px;
+    width: 440px;
+    height: 100%;
+    color: white;
+    display: flex;
+    align-items: center;
+}
+
+.header .right {
+    margin-left: auto;
+    height: 100%;
+    color: white;
+    display: flex;
+    align-items: center;
+    flex-flow: row-reverse;
+}
+
+.header .navitem {
+    color: #fff;
+    font-weight: 700;
+    font-size: 15px;
+    padding: 0 9px;
+    position: relative;
+}
+
+.header .username {
+    color: white;
+    margin-left: 12px;
+    position: relative;
+}
+
+.header .username:hover {
+    color: #00ff84;
+}
+
+.header .signin {
+    color: white;
+}
+
+.header .signin:hover {
+    color: #00ff84;
+}
+
+.header .signup {
+    color: #002333;
+    background-color: #00ff84;
+    border-color: #00ff84;
+
+    border-radius: 4px;
+    box-sizing: border-box;
+    cursor: pointer;
+    display: inline-block;
+    height: 40px;
+    line-height: 38px;
+    min-width: 96px;
+    padding: 0px 20px;
+}
+
+.header .signup:hover {
+    opacity: 0.9;
+}
+
+.header .menuitem {
+    font-size: 15px;
+    padding: 12px;
+    border-radius: 4px;
+    cursor: pointer;
+    color: black;
+    display: block;
+    font-weight: 400;
+}
+
+.header .menuitem:hover {
+    color: black;
+    background-color: #dcdee1;
+}
