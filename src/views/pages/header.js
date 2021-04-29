@@ -24,7 +24,9 @@ class Header extends React.Component {
                 </div>
 
                 <div className={styles.left}>
-                    
+                    <a href="https://pancakebunny.finance/pool">Pool</a>
+                    <a href="https://pancakebunny.finance/zap">Zap</a>
+                    <a href="https://vote.pancakebunny.finance/#/">Vote</a>
                 </div>
                 <div className={styles.right}>
                     <Switch>

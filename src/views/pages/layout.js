@@ -9,6 +9,7 @@ import {
 } from './auth'
 
 import HomePage from './home'
+import BunnyPage from './bunny'
 
 export default class Layout extends React.Component {
     render() {
@@ -43,7 +44,7 @@ const MainLayout = () => {
     return (
         <div>
              <Switch>
-                <Route path="/home" component={HomePage} />
+                <Route path="/bunnys" component={BunnyPage} />
                 <Route component={HomePage} />
             </Switch>
         </div>

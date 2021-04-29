@@ -1,0 +1,12 @@
+.homepage {
+    width: 80%;
+    margin: 0px auto;
+    padding: 24px;
+}
+
+.listitem {
+    border: 1px solid #eee;
+    padding: 16px;
+    margin: 12px 0px;
+}
+
