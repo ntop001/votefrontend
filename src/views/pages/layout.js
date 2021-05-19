@@ -3,7 +3,6 @@ import { Switch, Route } from 'react-router-dom'
 import styles from './layout.module.css'
 
 import { MessageBox, Sidebar } from 'views/comps'
-import Header from './header'
 import Footer from './footer'
 import {
     LoginPage

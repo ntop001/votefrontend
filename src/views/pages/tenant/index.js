@@ -33,8 +33,8 @@ class TenantPage extends React.Component {
         const ListItem = ({item}) => {
             return (
                 <div className={styles.listitem}>
-                    <div className={styles.title}><h3>公司名：{item.name} </h3> <a className={styles.edit}>充值</a> </div>
-                    <p>域名：<a>{item.subdomain}.qingjucrm.com</a></p>
+                    <div className={styles.title}><h3>公司名：{item.name} </h3> <a href="#/" className={styles.edit}>充值</a> </div>
+                    <p>域名：<a href="#/">{item.subdomain}.qingjucrm.com</a></p>
                     <p>
                         付费计划: {item.plan}, 席位: {item.seats}, 到期时间：{formatTime(item.due_time)}
                     </p>

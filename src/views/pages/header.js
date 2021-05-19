@@ -1,5 +1,4 @@
 import React from 'react'
-import { Switch, Route, Link } from 'react-router-dom'
 import { branch } from 'baobab-react/higher-order'
 import styles from './header.module.css'
 
@@ -34,20 +33,3 @@ class Header extends React.Component {
     }
 }
 export default branch({ user: ["user"] }, Header)
-
-
-const LoginTitle = () => (
-    <Link to="/auth/signup" >注册</Link>
-)
-
-const SignupTitle = () => (
-    <Link to="/auth/login" >登录</Link>
-)
-
-const ResetTitle = () => (
-    <React.Fragment>
-        <Link to="/auth/login" >登录</Link>
-        <div style={{margin: '0 8px', color: "#333"}}>|</div>
-        <Link to="/auth/signup" >注册</Link>
-    </React.Fragment>
-)
