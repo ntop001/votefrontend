@@ -19,8 +19,13 @@ const state = {
     user: {
     },
 
-    // home data
-    homePage: {
+    // tenant data
+    tenantPage: {
+        data: [],
+    },
+
+    // user data
+    userPage: {
         data: [],
     },
 

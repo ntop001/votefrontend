@@ -21,8 +21,7 @@
 
 .header .logo {
     height: 80%;
-    width: 120px;
-    background-color: #f8f8f8;
+    width: 180px;
 }
 
 .header .logo img {
@@ -46,5 +45,4 @@
     margin-left: auto;
     height: 100%;
     width: 240px;
-    background-color: #f8f8f8;
 }

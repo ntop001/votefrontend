@@ -1,0 +1,45 @@
+.page h3 {
+    margin: 0px;
+ }
+ 
+ .page p {
+    margin: 8px 0px;
+ }
+
+ .search {
+     display: flex;
+     align-items: center;
+     padding: 24px;
+ }
+ 
+ .search input {
+     min-width: 320px;
+     margin-left: 16px;
+     height: 32px;
+     outline: #999;
+ }
+ 
+ .search button {
+     height: 32px;
+     margin-left: 16px;
+ }
+ 
+ .datalist {
+     padding: 24px;
+ 
+ }
+ 
+ .listitem {
+     padding: 12px 16px;
+     border-bottom: 1px solid #999;
+ }
+ 
+ .listitem .title {
+     display: flex;
+     align-items: center;
+ }
+ 
+ .listitem .edit {
+     margin-left: 12px;
+     cursor: pointer;
+ }

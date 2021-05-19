@@ -32,27 +32,27 @@ export default class KawaClient {
     }
 
     // login/register api
-    signup(data) {
-        return this._post(`/api/register?t=mobile`, data)
-    }
-
     login(phone, pw) {
-        return this._post(`/api/login?t=mobile`, {mobile: phone, password: pw})
-    }
-    reset(data) {
-        return this._post(`/api/reset?t=mobile`, data)
-    }
-    logout() {
-        return this._post(`/api/logout`)
+        return this._post(`/admin/api/login?`, {username: phone, password: pw})
     }
     getSelf() {
-        return this._get(`/api/users/self`)
+        return this._get(`/admin/api/users/self`)
     }
 
-    // status
-    getStatusList(params) {
+    // tenants
+    getTenantList(params) {
         const q = this.encodeQueryString(params)
-        return this._get(`/api/t/statuses?${q}`)
+        return this._get(`/admin/api/tenants?${q}`)
+    }
+
+    updateTenant(id, params) {
+        return this._put(`/admin/api/tenants/${id}`, params)
+    }
+
+    // users
+    getUserList(params) {
+        const q = this.encodeQueryString(params)
+        return this._get(`/admin/api/users?${q}`)
     }
 
     // helper function

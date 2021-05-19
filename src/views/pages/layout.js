@@ -1,21 +1,21 @@
 import React from 'react'
 import { Switch, Route } from 'react-router-dom'
+import styles from './layout.module.css'
 
-import { MessageBox } from 'views/comps'
+import { MessageBox, Sidebar } from 'views/comps'
 import Header from './header'
 import Footer from './footer'
 import {
-    LoginPage, SignupPage,
+    LoginPage
 } from './auth'
 
-import HomePage from './home'
-import BunnyPage from './bunny'
+import TenantPage from './tenant'
+import UserPage from './user'
 
 export default class Layout extends React.Component {
     render() {
         return (
             <div>
-                <Header />
                 <Switch>
                     <Route path="/auth" component={AuthLayout} />
                     <Route component={MainLayout} />
@@ -29,10 +29,9 @@ export default class Layout extends React.Component {
 const AuthLayout = () => {
     return (
         <div style={{background:"#eee", height:"100vh"}}>
-            <div style={{paddingTop: "48px"}}>
+            <div style={{paddingTop: "10%"}}>
                 <Switch>
                     <Route path="/auth/login" component={LoginPage} />
-                    <Route path="/auth/signup" component={SignupPage} />
                 </Switch>
             </div>
             <Footer />
@@ -42,11 +41,17 @@ const AuthLayout = () => {
 
 const MainLayout = () => {
     return (
-        <div>
-             <Switch>
-                <Route path="/bunnys" component={BunnyPage} />
-                <Route component={HomePage} />
-            </Switch>
+        <div className={styles.layout}>
+            <div className={styles.sidebar}>
+                <Sidebar />
+            </div>
+            <div className={styles.main}>
+                <Switch>
+                    <Route path="/tenants" component={TenantPage} />
+                    <Route path="/users" component={UserPage} />
+                    <Route component={TenantPage} />
+                </Switch>
+            </div>
         </div>
     )
 }

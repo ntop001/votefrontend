@@ -9,7 +9,7 @@ export const formatTime = (unixTime) => {
     if (!unixTime) {
         return ''
     }
-    return moment.unix(unixTime).format("YYYY年 MMMM Do, hh:mm A");
+    return moment.unix(unixTime).format("YYYY年MM月DD日");
 }
 
 export const isTokenExpired = (token, ahead) => {

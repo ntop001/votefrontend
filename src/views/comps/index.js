@@ -1,8 +1,8 @@
 import Modal from './modal'
 import LoginModal from './login'
-import SignupModal from './signup'
 import MessageBox from './message'
+import Sidebar from './sidebar'
 
 export {
-    Modal, LoginModal, SignupModal, MessageBox, 
+    Modal, LoginModal, MessageBox, Sidebar,
 }

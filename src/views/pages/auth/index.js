@@ -1,5 +1,5 @@
 import {
-    LoginPage, SignupPage
+    LoginPage
 } from './comps'
 
-export {LoginPage, SignupPage}
+export {LoginPage}

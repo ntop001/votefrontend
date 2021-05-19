@@ -20,20 +20,14 @@ class Header extends React.Component {
         return (
             <div className={styles.header}>
                 <div className={styles.logo}>
-                    
+                    青桔CRM - 秘密花园
                 </div>
 
                 <div className={styles.left}>
-                    <a href="https://pancakebunny.finance/pool">Pool</a>
-                    <a href="https://pancakebunny.finance/zap">Zap</a>
-                    <a href="https://vote.pancakebunny.finance/#/">Vote</a>
+                    
                 </div>
                 <div className={styles.right}>
-                    <Switch>
-                        <Route path="/auth/login" component={LoginTitle} />
-                        <Route path="/auth/signup" component={SignupTitle} />
-                        <Route path="/auth/reset" component={ResetTitle} />
-                    </Switch>
+                    
                 </div>
             </div>
         )
