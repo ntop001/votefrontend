@@ -2,6 +2,7 @@
   "name": "kawahome",
   "version": "0.1.0",
   "private": true,
+  "homepage": "http://qingjucrm.com/a",
   "dependencies": {
     "baobab": "^2.5.2",
     "baobab-react": "^3.0.0",
