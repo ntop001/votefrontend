@@ -1,6 +1,7 @@
 import React from 'react'
 import { branch } from 'baobab-react/higher-order'
 import styles from './index.module.css'
+import ChargeModal from './charge'
 
 import {
     getTenantList, updateTenant
@@ -25,15 +26,26 @@ class TenantPage extends React.Component {
         })
     }
 
+    handleCharge = (item) => {
+        this.setState({ show: true, current: item })
+    }
+
+    handleChargeSubmit = (data) => {
+        const { current } = this.state
+        if (current) {
+            this.props.dispatch(updateTenant, current.id, data)
+        }
+    }
+
     componentDidMount() {
         this.props.dispatch(getTenantList)
     }
 
     render() {
-        const ListItem = ({item}) => {
+        const ListItem = ({item, onClick}) => {
             return (
                 <div className={styles.listitem}>
-                    <div className={styles.title}><h3>公司名：{item.name} </h3> <a href="#/" className={styles.edit}>充值</a> </div>
+                    <div className={styles.title}><h3>公司名：{item.name} </h3> <a href="#/" className={styles.edit} onClick={onClick}>充值</a> </div>
                     <p>域名：<a href="#/">{item.subdomain}.qingjucrm.com</a></p>
                     <p>
                         付费计划: {item.plan}, 席位: {item.seats}, 到期时间：{formatTime(item.due_time)}
@@ -52,9 +64,10 @@ class TenantPage extends React.Component {
                 </div>
                 <div className={styles.datalist}>
                     {tenants.map( item => {
-                        return <ListItem key={item.id} item={item}/>
+                        return <ListItem key={item.id} item={item} onClick={() => this.handleCharge(item)}/>
                     })}
                 </div>
+                <ChargeModal show={this.state.show} onSubmit={this.handleChargeSubmit} onRequestClose={ () => this.setState({show: false})} />
             </div>
         )
     }

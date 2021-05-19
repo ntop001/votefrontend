@@ -1,7 +1,6 @@
 import React from 'react'
 import ReactModal from 'react-modal'
 import styles from './modal.module.css'
-import lang from 'lang'
 
 import { Button } from 'shared/comps'
 import { ReactComponent as CloseSvg } from 'shared/images/close.svg'
@@ -62,8 +61,8 @@ export default class Modal extends React.Component {
                         </div>
                         <div className={styles.footer}>
                             <div className={styles.toright}>
-                                <Button type="normal" onClick={onRequestClose} >{lang.cancel}</Button> 
-                                <Button onClick={onSubmit}>{lang.save}</Button>
+                                <Button type="normal" onClick={onRequestClose} >取消</Button> 
+                                <Button onClick={onSubmit}>确定</Button>
                             </div>
                         </div>
                     </div>
