@@ -1,19 +1,30 @@
 .sidebar {
     width: 240px;
     height: 100vh;
-    border: 1px solid #999;
-    background-color: #f8f8f8;
+    background-color: #1c1c1c;
+}
+
+.brand {
+    padding: 24px;
+    color: white;
+}
+
+.brand h2 {
+    margin: 0px;
 }
 
 .listtem {
-    color: #333;
-    padding: 12px 16px;
-    border-bottom: 1px solid #999;
+    color: #ccc;
+    padding: 12px 24px;
 
     width: 100%;
     display: inline-block;
 }
 
+.listtem:hover {
+    opacity: 0.7;
+}
+
 .active {
-    background-color: #eee;
+    background-color: #2b2b2b;
 }

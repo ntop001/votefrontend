@@ -9,6 +9,10 @@ export default class Sidebar extends React.Component {
         }
         return (
             <div className={styles.sidebar}>
+                <div className={styles.brand}>
+                    <h2>青桔CRM</h2>
+                </div>
+
                 <ListItem to="/tenants" name="租户列表"/>
                 <ListItem to="/users" name="用户列表"/>
             </div>

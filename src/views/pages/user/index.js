@@ -47,7 +47,7 @@ class UserPage extends React.Component {
         return (
             <div className={styles.page}>
                 <div className={styles.search}>
-                    搜索： <input name="name" onChange={this.handleInputChange} /> <button type="button" onClick={this.handleSearch} >搜索</button>
+                    <input name="name" onChange={this.handleInputChange} /> <button type="button" onClick={this.handleSearch} >搜索</button>
                 </div>
                 <div className={styles.datalist}>
                     {users.map( item => {
