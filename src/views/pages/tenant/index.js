@@ -33,7 +33,9 @@ class TenantPage extends React.Component {
     handleChargeSubmit = (data) => {
         const { current } = this.state
         if (current) {
-            this.props.dispatch(updateTenant, current.id, data)
+            this.props.dispatch(updateTenant, current.id, data).then( () => {
+                this.setState({show: false })
+            })
         }
     }
 
@@ -57,6 +59,7 @@ class TenantPage extends React.Component {
             )
         }
         const { tenants = []} = this.props
+        const { show, current } = this.state
         return (
             <div className={styles.page}>
                 <div className={styles.search}>
@@ -67,7 +70,7 @@ class TenantPage extends React.Component {
                         return <ListItem key={item.id} item={item} onClick={() => this.handleCharge(item)}/>
                     })}
                 </div>
-                <ChargeModal show={this.state.show} onSubmit={this.handleChargeSubmit} onRequestClose={ () => this.setState({show: false})} />
+                <ChargeModal show={show} item={current} onSubmit={this.handleChargeSubmit} onRequestClose={ () => this.setState({show: false})} />
             </div>
         )
     }

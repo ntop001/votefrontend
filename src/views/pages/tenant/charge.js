@@ -4,7 +4,7 @@ import { Modal } from 'views/comps'
 
 export default class ChargeModal extends React.Component {
     state = {
-        plan: "solo", seats: 4, days: 0,
+        plan: "solo", seats: 0, days: 0, 
     }
 
     handleInputChange = (e) => {
@@ -15,10 +15,17 @@ export default class ChargeModal extends React.Component {
     handleSubmit = () => {
         const { plan, seats, days } = this.state
         const data = {
-            plan, seatts: parseInt(seats) || 0, days: parseInt(days) || 0,
+            plan, seats: parseInt(seats) || 0, days: parseInt(days) || 0,
         }
-        if(window.confirm(`账户修改为：付费方案:${plan}, 人数: ${seats}, 天数: ${days}`)) {
+        if(window.confirm(`账户修改, 付费方案:${plan}, 人数: ${seats}, 天数: ${days}`)) {
             this.props.onSubmit && this.props.onSubmit(data)
+        }
+    }
+
+    componentDidUpdate() {
+        if (this.state.item !== this.props.item) {
+            const { item } = this.props
+            this.setState({item, plan: item.plan, seats: item.seats, days: 0})
         }
     }
 
