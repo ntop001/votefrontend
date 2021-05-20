@@ -1,8 +1,7 @@
 .layout {
-    margin-top: 0px;
-    min-height: 100vh;
-    display: flex;
-    top: 48px;
+    width: 100vw;
+    height: 100vh;
+    position: relative;
 }
 
 .sider {
@@ -18,14 +17,10 @@
 }
 
 .main {
-    width: calc(100vw - 60px);
-    height: 100vh;
-}
-
-.main .content {
     width: 100%;
-    height: calc(100vh - 56px);
-    overflow-y: scroll;
+    height: 100vh;
+    margin-left: 240px;
+    overflow: auto;
 }
 
 .loading {

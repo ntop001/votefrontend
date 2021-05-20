@@ -41,7 +41,7 @@ const AuthLayout = () => {
 const MainLayout = () => {
     return (
         <div className={styles.layout}>
-            <div className={styles.sidebar}>
+            <div className={styles.sider}>
                 <Sidebar />
             </div>
             <div className={styles.main}>
