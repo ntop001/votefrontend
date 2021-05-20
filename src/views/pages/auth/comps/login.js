@@ -31,7 +31,7 @@ export default class LoginPage extends React.Component {
         return (
             <div>
                 <div className={styles.title}>
-                    请登录
+                    花园管理员，请登录
                 </div>
                 <div className={styles.login}>
                     <div className={styles.formcontainer}>
