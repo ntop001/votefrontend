@@ -43,11 +43,13 @@ class UserPage extends React.Component {
                 </div>
             )
         }
-        const { users = []} = this.props
+        const { users = [], total} = this.props
         return (
             <div className={styles.page}>
                 <div className={styles.search}>
-                    <input name="name" onChange={this.handleInputChange} /> <button type="button" onClick={this.handleSearch} >搜索</button>
+                    <span>用户数：{total}</span>
+                    <input name="name" onChange={this.handleInputChange} />
+                    <button type="button" onClick={this.handleSearch} >搜索</button>
                 </div>
                 <div className={styles.datalist}>
                     {users.map( item => {
@@ -59,6 +61,7 @@ class UserPage extends React.Component {
     }
 }
 const binding = {
-    users: ["userPage", "data"]
+    users: ["userPage", "data"],
+    total: ["userPage", "total"]
 }
 export default branch(binding, UserPage)

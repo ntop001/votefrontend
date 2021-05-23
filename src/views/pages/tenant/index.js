@@ -58,12 +58,14 @@ class TenantPage extends React.Component {
                 </div>
             )
         }
-        const { tenants = []} = this.props
+        const { tenants = [], total} = this.props
         const { show, current } = this.state
         return (
             <div className={styles.page}>
                 <div className={styles.search}>
-                    <input name="name" onChange={this.handleInputChange} /> <button type="button" onClick={this.handleSearch} >搜索</button>
+                    <span>租户数：{total}</span>
+                    <input name="name" onChange={this.handleInputChange} />
+                    <button type="button" onClick={this.handleSearch} >搜索</button>
                 </div>
                 <div className={styles.datalist}>
                     {tenants.map( item => {
@@ -76,6 +78,8 @@ class TenantPage extends React.Component {
     }
 }
 const binding = {
-    tenants: ["tenantPage", "data"]
+    tenants: ["tenantPage", "data"],
+    total: ["tenantPage", "total"],
+
 }
 export default branch(binding, TenantPage)

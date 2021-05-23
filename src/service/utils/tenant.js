@@ -2,9 +2,26 @@ import client from 'service/client'
 import message from './message'
 
 export const getTenantList = (tree, params) => {
-   client.getTenantList().then( data => {
+   client.getTenantList({...params, page: 1}).then( resp => {
+        const { data, total } = resp
         const cursor = tree.select("tenantPage")
         cursor.set("data", data)
+        cursor.set("total", total)
+        cursor.set("page", 1)
+   }).catch( err => {
+        console.log("getTenantList error", err)
+        message.error("列表加载失败", err.status)
+   })
+}
+
+export const getMoreTenant = (tree, params) => {
+    const cursor = tree.select("tenantPage")
+    const nextPage = cursor.get("page") + 1
+    client.getTenantList({...params, page: nextPage}).then( resp => {
+        const { data, total } = resp
+        cursor.set("data", data)
+        cursor.set("total", total)
+        cursor.set("page", nextPage)
    }).catch( err => {
         console.log("getTenantList error", err)
         message.error("列表加载失败", err.status)
