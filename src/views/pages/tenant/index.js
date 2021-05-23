@@ -5,7 +5,7 @@ import ChargeModal from './charge'
 import DataList from './datalist'
 
 import {
-    getTenantList, updateTenant
+    getTenantList, getMoreTenant, updateTenant
 } from 'service/utils/tenant'
 
 class TenantPage extends React.Component {
@@ -37,6 +37,10 @@ class TenantPage extends React.Component {
         }
     }
 
+    handleMore = () => {
+        this.props.dispatch(getMoreTenant)
+    }
+
     componentDidMount() {
         this.props.dispatch(getTenantList)
     }
@@ -53,6 +57,9 @@ class TenantPage extends React.Component {
                 </div>
                 <div className={styles.datalist}>
                     <DataList data={tenants}/>
+                </div>
+                <div className={styles.loadmore}>
+                    <button onClick={this.handleMore}>加载更多..</button>
                 </div>
                 <ChargeModal show={show} item={current} onSubmit={this.handleChargeSubmit} onRequestClose={ () => this.setState({show: false})} />
             </div>

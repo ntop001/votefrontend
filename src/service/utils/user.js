@@ -19,7 +19,7 @@ export const getMoreUser = (tree, params) => {
     const nextPage = cursor.get("page") + 1
     client.getUserList({...params, page: nextPage}).then( resp => {
         const { data, total } = resp
-        cursor.set("data", data)
+        cursor.concat("data", data)
         cursor.set("total", total)
         cursor.set("page", nextPage)
    }).catch( err => {

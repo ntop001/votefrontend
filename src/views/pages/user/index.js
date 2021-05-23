@@ -4,11 +4,8 @@ import styles from './index.module.css'
 import DataList from './datalist'
 
 import {
-    getUserList
+    getUserList, getMoreUser
 } from 'service/utils/user'
-import {
-    formatTime
-} from 'service/utils/util'
 
 class UserPage extends React.Component {
     state = {
@@ -26,6 +23,10 @@ class UserPage extends React.Component {
         })
     }
 
+    handleMore = () => {
+        this.props.dispatch(getMoreUser)
+    }
+
     componentDidMount() {
         this.props.dispatch(getUserList)
     }
@@ -41,6 +42,9 @@ class UserPage extends React.Component {
                 </div>
                 <div className={styles.datalist}>
                     <DataList data={users}/>
+                </div>
+                <div className={styles.loadmore}>
+                    <button onClick={this.handleMore}>加载更多..</button>
                 </div>
             </div>
         )
