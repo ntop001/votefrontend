@@ -1,0 +1,30 @@
+.table {
+    border-spacing: 0px;
+    width: 100%;
+}
+
+.table thead {
+    background-color: #eee;
+    border-bottom: 1px solid #edefeb;
+    color: #777;
+}
+
+.table th, td {
+    min-width: 160px;
+    border: none;
+}
+
+.table td {
+    padding: 12px 10px;
+    border-bottom: 1px solid #eee;
+    font-weight: 500;
+}
+
+.table .actions {
+    text-align: right;
+}
+
+.table .actions > * {
+    margin-left: 12px;
+    cursor: pointer;
+}
