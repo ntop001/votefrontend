@@ -12,18 +12,10 @@ export default class DataList extends React.Component {
         const TableItem = ({item}) => {
             return (
             <tr className={styles.row}>
-                <td>
-                    {item.name || '~'}/{item.subdomain}
-                </td>
-                <td>{`${item.plan}版/${item.seats}人`} </td>
-                <td>{formatTime(item.due_time)}</td>
+                <td>{item.name || '~'}</td>
+                <td>{item.mobile} </td>
                 <td>{formatTime(item.created_at)}</td>
                 <td>{formatTime(item.updated_at)}</td>
-
-                <td className={styles.actions}>
-                    {/* eslint-disable-next-line */}
-                    <a onClick={() => this.handleClickItem("edit", item)}>充值</a>
-                </td>
             </tr>
             )
         }
@@ -32,7 +24,7 @@ export default class DataList extends React.Component {
             <table className={styles.table}>
                 <thead>
                     <tr>
-                        <th>公司</th><th>付费计划</th><th>到期时间</th><th>创建时间</th><th>最后更新时间</th><th></th>
+                        <th>用户名</th><th>手机号</th><th>创建时间</th><th>最后更新时间</th>
                     </tr>
                 </thead>
                 <tbody>

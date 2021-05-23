@@ -1,6 +1,7 @@
 import React from 'react'
 import { branch } from 'baobab-react/higher-order'
 import styles from './index.module.css'
+import DataList from './datalist'
 
 import {
     getUserList
@@ -30,19 +31,6 @@ class UserPage extends React.Component {
     }
 
     render() {
-        const ListItem = ({item}) => {
-            return (
-                <div className={styles.listitem}>
-                    <div className={styles.title}><h3>用户名：{item.name} </h3> </div>
-                    <p>
-                        手机号: {item.mobile}
-                    </p>
-                    <p>
-                        创建时间：{formatTime(item.created_at)}, 最后更新时间: {formatTime(item.updated_at)}
-                    </p>
-                </div>
-            )
-        }
         const { users = [], total} = this.props
         return (
             <div className={styles.page}>
@@ -52,9 +40,7 @@ class UserPage extends React.Component {
                     <button type="button" onClick={this.handleSearch} >搜索</button>
                 </div>
                 <div className={styles.datalist}>
-                    {users.map( item => {
-                        return <ListItem key={item.id} item={item}/>
-                    })}
+                    <DataList data={users}/>
                 </div>
             </div>
         )
