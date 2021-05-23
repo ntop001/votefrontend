@@ -5,7 +5,7 @@ export const userLogin = (tree, name, pw) => {
     return new Promise( (res, rej) => {
         message.showLoading(true)
         client.login(name, pw).then( resp => {
-            console.log("login resp:", resp)
+            client.setToken(resp.access_token)
             tree.set(['token', 'value'], resp.access_token)
             localStorage.setItem('a-token', resp.access_token)
             res(resp)
