@@ -46,7 +46,7 @@ class TenantPage extends React.Component {
     }
 
     render() {
-        const { tenants = [], total} = this.props
+        const { tenants = [], total, hasmore } = this.props
         const { show, current } = this.state
         return (
             <div className={styles.page}>
@@ -59,7 +59,11 @@ class TenantPage extends React.Component {
                     <DataList data={tenants}/>
                 </div>
                 <div className={styles.loadmore}>
-                    <button onClick={this.handleMore}>加载更多..</button>
+                    {hasmore? (
+                        <button onClick={this.handleMore}>加载更多..</button>
+                    ): (
+                        <span>没有更多数据了..</span>
+                    )}
                 </div>
                 <ChargeModal show={show} item={current} onSubmit={this.handleChargeSubmit} onRequestClose={ () => this.setState({show: false})} />
             </div>
@@ -69,6 +73,6 @@ class TenantPage extends React.Component {
 const binding = {
     tenants: ["tenantPage", "data"],
     total: ["tenantPage", "total"],
-
+    hasmore: ["tenantPage", "hasmore"],
 }
 export default branch(binding, TenantPage)

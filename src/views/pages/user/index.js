@@ -32,7 +32,7 @@ class UserPage extends React.Component {
     }
 
     render() {
-        const { users = [], total} = this.props
+        const { users = [], total, hasmore} = this.props
         return (
             <div className={styles.page}>
                 <div className={styles.search}>
@@ -44,7 +44,11 @@ class UserPage extends React.Component {
                     <DataList data={users}/>
                 </div>
                 <div className={styles.loadmore}>
-                    <button onClick={this.handleMore}>加载更多..</button>
+                    {hasmore? (
+                        <button onClick={this.handleMore}>加载更多..</button>
+                    ): (
+                        <span>没有更多数据了..</span>
+                    )}
                 </div>
             </div>
         )
@@ -52,6 +56,7 @@ class UserPage extends React.Component {
 }
 const binding = {
     users: ["userPage", "data"],
-    total: ["userPage", "total"]
+    total: ["userPage", "total"],
+    hasmore: ["userPage", "hasmore"]
 }
 export default branch(binding, UserPage)
