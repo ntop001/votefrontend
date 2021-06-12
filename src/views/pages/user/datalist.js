@@ -12,7 +12,7 @@ export default class DataList extends React.Component {
         const TableItem = ({item}) => {
             return (
             <tr className={styles.row}>
-                <td>{item.name || '~'}</td>
+                <td>{item.name || '~'}/{item.login}</td>
                 <td>{item.mobile} </td>
                 <td>{formatTime(item.created_at)}</td>
                 <td>{formatTime(item.updated_at)}</td>
