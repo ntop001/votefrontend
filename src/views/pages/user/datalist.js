@@ -16,6 +16,10 @@ export default class DataList extends React.Component {
                 <td>{item.mobile} </td>
                 <td>{formatTime(item.created_at)}</td>
                 <td>{formatTime(item.updated_at)}</td>
+                <td>
+                    {/* eslint-disable-next-line */}
+                    <a onClick={() => this.handleClickItem("login", item)}>登录</a>
+                </td>
             </tr>
             )
         }
@@ -24,7 +28,7 @@ export default class DataList extends React.Component {
             <table className={styles.table}>
                 <thead>
                     <tr>
-                        <th>用户名</th><th>手机号</th><th>创建时间</th><th>最后更新时间</th>
+                        <th>用户名</th><th>手机号</th><th>创建时间</th><th>最后更新时间</th><th></th>
                     </tr>
                 </thead>
                 <tbody>

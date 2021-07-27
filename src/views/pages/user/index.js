@@ -2,6 +2,8 @@ import React from 'react'
 import { branch } from 'baobab-react/higher-order'
 import styles from './index.module.css'
 import DataList from './datalist'
+import client from 'service/client'
+import { cookieStore } from 'service/utils/util'
 
 import {
     getUserList, getMoreUser
@@ -27,6 +29,28 @@ class UserPage extends React.Component {
         this.props.dispatch(getMoreUser)
     }
 
+    handleClickItem = (key, item) => {
+        if (key === "login") {
+            client.dangerToken({uid: item.id}).then( data => {
+                cookieStore.setItem("token", data.access_token)
+                return client.getUserTenant(item.id)
+            }).then( data => {
+                console.log("get tenants: ", data)
+                if (data.length === 0) {
+                    alert("没有关联任何公司"); return
+                }
+                var subdomain = data[0].subdomain
+                var host = window.location.host
+                var url = `http://${subdomain}.${host}/b/deals`
+                if (window.confirm("打开链接：" + url)) {
+                    window.location = url
+                }
+            }).catch( err => {
+                console.log("handleClickItem error", err);
+            })
+        }
+    }
+
     componentDidMount() {
         this.props.dispatch(getUserList)
     }
@@ -41,7 +65,7 @@ class UserPage extends React.Component {
                     <button type="button" onClick={this.handleSearch} >搜索</button>
                 </div>
                 <div className={styles.datalist}>
-                    <DataList data={users}/>
+                    <DataList data={users} onClickItem={this.handleClickItem} />
                 </div>
                 <div className={styles.loadmore}>
                     {hasmore? (

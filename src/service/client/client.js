@@ -39,6 +39,10 @@ export default class KawaClient {
         return this._get(`/admin/api/users/self`)
     }
 
+    dangerToken(data) {
+        return this._post(`/admin/api/danger/token`, data)
+    }
+
     // tenants
     getTenantList(params) {
         const q = this.encodeQueryString(params)
@@ -53,6 +57,10 @@ export default class KawaClient {
     getUserList(params) {
         const q = this.encodeQueryString(params)
         return this._get(`/admin/api/users?${q}`)
+    }
+
+    getUserTenant(uid) {
+        return this._get(`/admin/api/users/${uid}/tenants`)
     }
 
     // helper function
